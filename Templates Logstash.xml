@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.4</version>
-    <date>2020-03-16T19:08:47Z</date>
+    <version>4.2</version>
+    <date>2020-03-18T15:25:21Z</date>
     <groups>
         <group>
-            <name>Templates ELK</name>
+            <name>HG ELK</name>
         </group>
     </groups>
     <templates>
         <template>
             <template>Templates Logstash</template>
             <name>Templates Logstash</name>
+            <description/>
             <groups>
                 <group>
-                    <name>Templates ELK</name>
+                    <name>HG ELK</name>
                 </group>
             </groups>
             <applications>
+                <application>
+                    <name>Logstash</name>
+                </application>
                 <application>
                     <name>Logstash Events</name>
                 </application>
@@ -30,409 +34,1362 @@
             <items>
                 <item>
                     <name>Logstash events duration</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.events.duration</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Events</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.events.duration_in_millis</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                         <step>
-                            <type>MULTIPLIER</type>
+                            <type>1</type>
                             <params>0.001</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash events Filtered</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.events.filtered</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Events</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.events.filtered</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
+                        </step>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash events IN</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.events.in</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Events</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.events.in</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
+                        </step>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash events OUT</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.events.out</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Events</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.events.out</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
+                        </step>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash events queue push duration</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.events.queue.push.duration</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Events</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.events.queue_push_duration_in_millis</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                         <step>
-                            <type>MULTIPLIER</type>
+                            <type>1</type>
                             <params>0.001</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm GC Old count</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.gc.old.count</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.gc.collectors.old.collection_count</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm GC Old collection time</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.gc.old.time</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>ms</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.gc.collectors.old.collection_time_in_millis</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                         <step>
-                            <type>CHANGE_PER_SECOND</type>
+                            <type>10</type>
                             <params/>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm GC Young count</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.gc.young.count</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.gc.collectors.young.collection_count</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm GC Young collection time</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.gc.young.time</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>ms</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.gc.collectors.young.collection_time_in_millis</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                         <step>
-                            <type>CHANGE_PER_SECOND</type>
+                            <type>10</type>
                             <params/>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
-                    <name>Jvm Memory Heap Used in %</name>
-                    <type>DEPENDENT</type>
-                    <key>logstash.jvm.mem.heap.used</key>
+                    <name>Jvm Memory Heap Max</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>logstash.jvm.mem.heap.max.b</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
-                    <units>%</units>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
-                            <params>$.jvm.mem.heap_used_percent</params>
+                            <type>12</type>
+                            <params>$.jvm.mem.heap_max_in_bytes</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm Memory Heap Used</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.mem.heap.used.b</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.mem.heap_used_in_bytes</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
-                    <name>Jvm threads count</name>
-                    <type>DEPENDENT</type>
-                    <key>logstash.jvm.threads.count</key>
+                    <name>Jvm Memory Heap Used in %</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>logstash.jvm.mem.heap.used.proc</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
-                            <params>$.jvm.threads.count</params>
-                        </step>
-                        <step>
-                            <type>CHANGE_PER_SECOND</type>
-                            <params/>
+                            <type>12</type>
+                            <params>$.jvm.mem.heap_used_percent</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item>
+                        <key>logstash.node.stat[{$LS.PORT}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>jvm threads count</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>logstash.jvm.threads.count</key>
+                    <delay>0</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Logstash JVM</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.jvm.threads.count</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Jvm Uptime</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.jvm.up.time</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash JVM</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.jvm.uptime_in_millis</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                         <step>
-                            <type>MULTIPLIER</type>
+                            <type>1</type>
                             <params>0.001</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Parent node stat</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.node.stat[{$LS.PORT}]</key>
-                    <delay>60s</delay>
-                    <history>0</history>
+                    <delay>30s</delay>
+                    <history>1h</history>
                     <trends>0</trends>
-                    <value_type>TEXT</value_type>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Logstash process CPU used in %</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.process.cpu.pecent</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>%</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Process</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.process.cpu.percent</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash process memory total virtual</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.process.memory.total.vm</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
                     <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Process</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.process.mem.total_virtual_in_bytes</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash process OpenFile current</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.process.ofile.current</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Process</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.process.open_file_descriptors</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
                 <item>
                     <name>Logstash process OpenFile Max</name>
-                    <type>DEPENDENT</type>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
                     <key>logstash.process.ofile.max</key>
                     <delay>0</delay>
+                    <history>90d</history>
                     <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Logstash Process</name>
                         </application>
                     </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>JSONPATH</type>
+                            <type>12</type>
                             <params>$.process.max_file_descriptors</params>
+                            <error_handler>0</error_handler>
+                            <error_handler_params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                     <master_item>
                         <key>logstash.node.stat[{$LS.PORT}]</key>
                     </master_item>
                 </item>
             </items>
+            <discovery_rules/>
+            <httptests/>
             <macros>
                 <macro>
                     <macro>{$LS.PORT}</macro>
-                    <value>9660</value>
+                    <value>9600</value>
                 </macro>
             </macros>
+            <templates/>
+            <screens/>
+            <tags/>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{Templates Logstash:logstash.jvm.mem.heap.used.proc.last(#2)}&lt;{Templates Logstash:logstash.jvm.mem.heap.used.proc.last(#3)} and {Templates Logstash:logstash.jvm.mem.heap.used.proc.min(#3)}&gt;85</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>WF JVM Heap Usage(&gt;85%)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Часть А  - факт срабатывания GC&#13;
+Часть Б – c смомента срабатывания GC хотя бы одно из трех значений утилизации Heap &gt;85%</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
 </zabbix_export>
